@@ -1,0 +1,100 @@
+﻿<html>
+<style>
+  h1 { font-family: Verdana,Arial,sans-serif; font-weight: bold ;font-size: 1.2em;}
+  p { font-family: Verdana,Arial,sans-serif; font-size: .7em;}
+  table { font-family: Verdana,Arial,sans-serif; font-size: .7em;}
+</style>
+<body>
+<h1>About this program</h1>
+<p>This is a standalone utility that allows you to convert an Excel file (.xlsx) to the Hansoft XML format for input into Hansoft.</p>
+
+<h1>Limitations</h1>
+<p>This utility is currently targeted towards importing into the product backlog section of Hansoft and it may or may not
+be suitable for other purposes.</p>
+
+<p>It is possible to import into most columns in Hansoft including custom columns of different types but some columns are not
+supported currently, most notably the Release Tag column and the Linked to items column.</p>
+
+<p>You can at most map 40 columns currently.</p>
+
+<h1>Terms and conditions</h1>
+<p>hsimport by Svante Lidman (Hansoft AB) is licensed under a
+<a target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+This program is not part of the official Hansoft product or subject to íts license agreement.
+The program is provided as is and there is no obligation on Hansoft AB to provide support, update or enhance this program.
+Questions can be sent to <a href="mailto:svante.lidman@hansoft.se">svante.lidman@hansoft.se</a> and will be answered when other obligations so permit.</p>
+
+<h1>Installation</h1>
+<p>The .NET Framework 4.5 must first be installed to run this program. You can download it free of charge <a target="_blank" href="http://www.microsoft.com/en-us/download/details.aspx?id=30653">here</a>.</p>
+<p>The program does not come with an installer but you simply copy the files included in the distribution zip-file to a suitable location and
+double click on hsimport.exe to start the program and display its main GUI.</p>
+
+<h1>How to use the program</h1>
+<p>With the program you can create a mapping that maps the different columns of an Excel file onto different columns in Hansoft.
+To create a mapping you need to first select the Excel file with data that you want to import into Hansoft. This is done by clicking the "Set" button
+in the left column. When the Excel file is selected you will be asked whether or not the first row in the Excel sheet is a header that shouldn't 
+be imported into Hansoft. Once the Excelfile is read, the left column will be populated with the values from the first row in the Excel sheet.
+A number of comboboxes will also be activated in the right column and from these you select to which Hansoft column the different Excel columns
+should be mapped.</p>
+<img src="ui.png" />
+
+<h1>Defining Custom Columns</h1>
+<p>If the data in one or several columns should be mapped to custom columns in Hansoft then these columns must first be defined in Hansoft. Then you
+need to define the column in hsimport. This is done by clicking the "Modify Columns" button and then a dialogue that lists the exisiting
+custom column definitions will be displayed and you can the edit/delete these or create new ones. When you create a new custo column definition
+the most important fields to fill in correctly are:</p>
+
+<p><strong>Code Name:</strong> This is the formal Hansoft name for the column. If you fill out the Display Name with the name  as shown in the column
+header in the Hansoft GUI then then Code Name will be automatically filled out correctly.</p>
+
+<p><strong>Type:</strong> The type must be the same as the corresponding type in Hansoft.</p>
+
+<p><strong>Options:</strong> Used to the define the different options for single and multiselect dropdown fields in Hansoft.</p>
+
+<p>When a custom column has been defined it will be available for mapping in the comboboxes on the main screen in the same way as the built in columns.</p>
+
+<h1>Generating Hansoft Xml</h1>
+<p>To generate Hansoft Xml, click the "Save" button in the right column. You will be then be prompted for a file name. Alternatively you can first set the file name by clicking the
+"Set" button in the right column. The saved file can then be imported into Hansoft.</p>
+
+<h1>Saving your Mapping</h1>
+<p>If you want to save your mapping to reuse/reapply it at a later time you can Save/Open mapping definitions with the menu items found under the File menu.</p>
+
+<h1>Expected data formats in the Excel sheet</h1>
+<p><strong>Text, Hyperlink, Number, Date and Times columns:</strong> Formatted the same way as when displayed in Hansoft</p>
+<p><strong>Enumerable columns (Status, Risk etc.):</strong> Formatted the same way as when displayed in Hansoft. Multiselect values should be separated by semicolons. This is valid for both built in and custom columns.</p>
+<p><strong>Assigned To columns:</strong> A semicolon separated list of Hansoft user names</p>
+<p><strong>People column:</strong> A semicolon separated list of Hansoft user and/or group names</p>
+
+<h1>Change history</h1>
+  <table border="1" cellpadding="7">
+    <tr>
+      <td>Date</td>
+      <td align="Right">Version</td>
+      <td>Comment</td>
+    </tr>
+    <tr>
+      <td valign="top">Feb&nbsp;28,&nbsp;2013</td>
+      <td valign="top" align="Right">1.11</td>
+      <td valign="top">
+        More accurate generation of the code name for custom columns when the display name contains characters that are illegal in Xml names.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Feb&nbsp;23,&nbsp;2013</td>
+      <td valign="top" align="Right">1.1</td>
+      <td valign="top">
+        Can now map up to 40 columns<br/><br/>
+        User story flag is now set on imported items when the User story column in Hansoft is mapped<br/><br/>
+        Works in all Windows DPI settings now<br/><br/>
+        Xml declaration added to the generated XML ensuring utf-8 encoding
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Feb&nbsp;18,&nbsp;2013</td>
+      <td valign="top" align="Right">1.0</td>
+      <td valign="top">First version</td>
+    </tr>
+  </table>
+</body>
+</html>

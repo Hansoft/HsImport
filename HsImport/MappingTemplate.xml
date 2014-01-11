@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mapping source="" target="">
+  <BuiltInColumns>
+    <Column DisplayName="Item name" CodeName="TaskName" Type="String"/>
+    <Column DisplayName="Status" CodeName="PreCreatedColumn_ItemStatus" Type="EnumSingle">
+      <Option Name="Not done"/>
+      <Option Name="In progress"/>
+      <Option Name="Completed"/>
+      <Option Name="Blocked"/>
+      <Option Name="To be deleted"/>
+    </Column>
+    <Column DisplayName="Assign tag" CodeName="Resources" Type="Resources" />
+    <Column DisplayName="Category" CodeName="PreCreatedColumn_Category" Type="EnumSingle">
+      <Option Name="Requirement"/>
+      <Option Name="Enhancement"/>
+      <Option Name="Technology upgrade"/>
+      <Option Name="Bug (A)"/>
+      <Option Name="Bug (B)"/>
+      <Option Name="Bug (C)"/>
+      <Option Name="Bug (D)"/>
+    </Column>
+    <Column DisplayName="Confidence" CodeName="PreCreatedColumn_Confidence" Type="EnumSingle">
+      <Option Name="High confidence"/>
+      <Option Name="Medium confidence"/>
+      <Option Name="Low confidence"/>
+    </Column>
+    <!--
+    This is intended for doing lookup/update in place when doing multiple updated and will require special handling
+    <Column DisplayName="Database ID" CodeName="DatabaseID" />
+    -->
+    <Column DisplayName="Estimated days" CodeName="PreCreatedColumn_Effort" Type="Float" />
+    <Column DisplayName="Hyperlink" CodeName="Hyperlink" Type="Hyperlink" />
+    <Column DisplayName="User story" CodeName="LongText" Type="MultilineText" />
+    <!--
+    <Column DisplayName="ID" CodeName="" />
+    <Column DisplayName="Last commented on" CodeName="" />
+    <Column DisplayName="Last updated on" CodeName="" />
+    <Column DisplayName="Linked to item" CodeName="" />
+    -->
+    <Column DisplayName="Originally created by" CodeName="PlannedBy" Type="String"/>
+    <Column DisplayName="Points" CodeName="PreCreatedColumn_ComplexityPoints" Type="Integer" />
+    <Column DisplayName="Product backlog priority" CodeName="PreCreatedColumn_MainBacklogPriority" Type="EnumSingle">
+      <Option Name="Very low priority"/>
+      <Option Name="Low priority"/>
+      <Option Name="Medium priority"/>
+      <Option Name="High priority"/>
+      <Option Name="Very high priority"/>
+    </Column>
+    <Column DisplayName="Risk" CodeName="PreCreatedColumn_Risk" Type="EnumSingle">
+      <Option Name="High risk"/>
+      <Option Name="Medium risk"/>
+      <Option Name="Low risk"/>
+    </Column>
+  </BuiltInColumns>
+  <CustomColumns>
+  </CustomColumns>
+  <ExcelToHansoftMapping>
+  </ExcelToHansoftMapping>
+</Mapping>
