@@ -20,9 +20,9 @@
       <Option Name="Bug (D)"/>
     </Column>
     <Column DisplayName="Confidence" CodeName="PreCreatedColumn_Confidence" Type="EnumSingle">
-      <Option Name="High confidence"/>
-      <Option Name="Medium confidence"/>
       <Option Name="Low confidence"/>
+      <Option Name="Medium confidence"/>
+      <Option Name="High confidence"/>
     </Column>
     <!--
     This is intended for doing lookup/update in place when doing multiple updated and will require special handling
